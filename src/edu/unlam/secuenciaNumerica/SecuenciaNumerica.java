@@ -2,19 +2,14 @@ package edu.unlam.secuenciaNumerica;
 
 public class SecuenciaNumerica {
 
+	//complejidad numerica O(1)!! tiene complejidad lineal.
 	public static int encontrarI(int n) {		
 		if(n<3) return -1;
-		double sumaIzq = 0, sumaDer=0;
-		for(int i=2; i<n;i++) {
-			sumaIzq = (Math.pow(i, 2)-i)/2;
-			sumaDer = (Math.pow(n, 2)+n)/2 - sumaIzq -i;
-			
-			
-			if(sumaIzq == sumaDer)
-				return i;
-		}
-			
-		return -1;
 		
+		double res = Math.sqrt((n*(n+1))/2);
+		
+		if(res%1==0)
+			return (int)res;
+		return -1;
 	}
 }
